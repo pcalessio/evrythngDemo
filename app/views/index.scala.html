@@ -1,0 +1,41 @@
+@(message: String)
+
+@main("Home") {
+
+    <div class="jumbotron">
+   	<div class="container"  style="text-align:center;">
+  		<h2>Scavenger Hunt through IoT and EVRYTHNG API</h2>
+  		<p>Suppose we have a bunch of IoT devices or tags spread in the city. <br/>
+  		We can use them as check-in points and next clue containers for a Scavenger Hunt. <br/>
+  		Each of them as a unique Id, a location, and the hint to find the next one.</p>
+  		
+  		
+  	</div>
+	</div>
+	
+	
+	<div class="row">
+  <div class="col-sm-6 col-md-6">
+    <div class="thumbnail"  style="text-align:center;">
+      
+      <div class="caption">
+      	<i class="fa fa-tachometer fa-3x"></i>
+        <!-- <h3>Thumbnail label</h3> -->
+        <p>Here you can see your Scavenger Hunt on a map and manage it.</p>
+        <p><a href="/admin" class="btn btn-primary" role="button">Admin Panel</a></p>
+      </div>
+    </div>
+    </div>
+    <div class="col-sm-6 col-md-6">
+    <div class="thumbnail"  style="text-align:center;">
+      <div class="caption">
+      	<i class="fa fa-gamepad fa-3x"></i>
+        <!-- <h3>Thumbnail label</h3> -->
+        <p>Here you can start playing the game!</p>
+        <p><a href="/game" class="btn btn-primary" role="button">Start Game</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+}

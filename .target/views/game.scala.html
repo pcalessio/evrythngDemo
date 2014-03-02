@@ -1,0 +1,42 @@
+@(thng: com.evrythng.thng.resource.model.store.Thng, form: Form[Answer])
+@import helper.twitterBootstrap._
+
+@main("Game") {
+	
+	<div class="col-sm-6 col-md-6">
+	
+	<h5><b>You are at:</b></h5> 
+	  	<h4>@thng.getName() </h4>
+	 	@if(thng.getLocation()!=null){
+ 			<h6><b>Latitude:</b> @thng.getLocation().getLatitude() 
+			<b>Longitude:</b> @thng.getLocation().getLongitude() </h6>
+ 		} 
+ 		<h5><b>Description:</b></h5>
+ 		 @thng.getDescription()  
+ 		<h5><b>Next Clue:</b></h5>
+ 		<h4> @thng.getCustomFields().get("hint")</h4>
+ 	
+ 	</div>
+
+	<div class="col-sm-6 col-md-6">
+	
+	@if(thng.getCustomFields().get("nextthng")!=null){
+		<h4>When you find the next check-in point enter the ID here: </h4> 
+		@helper.form(action = routes.Application.gameSubmit()) {
+	    	<input type="hidden" name="prevThngID" value='@thng.getId()' >
+	    	@helper.inputText(form("nextThngID"),'_label -> "")
+	    	<input type="submit" class="btn btn-primary" value="Submit">
+		}
+		
+		<h5>DISCLAIMER: in a real case scenario you shouldn't enter any code as your mobile device will discover 
+		the ID of the IoT device or tag and automatically show you the next hint. 
+		For the purpose of this demo instead please enter the following ID to go to the next hint: @thng.getCustomFields().get("nextthng")</h5> 
+    } else {
+    	<h4>Congratulation! You arrive at the end of the Scavenger Hunt! </h4>
+    	<h3><a href="/" class="btn btn-primary">Go back to home page</a></h3>
+    }
+    
+    </div>
+
+
+}
