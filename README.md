@@ -27,4 +27,4 @@ To run this application you will need Play Framework 2.2 installed. You can then
 git clone https://github.com/pcalessio/evrythngDemo.git
 play run
 ```
-Note: you need to use your own EVRYTHNG api key and create some Thngs (check-in points) through the EVRYTHNG backend.
+Note: you need to change the evrythng.apikey configuration in application.conf in order to run it. 
